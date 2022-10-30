@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AddPost</title>
+    <link rel="stylesheet" href="HeaderStyle.css" />
+    <link rel="stylesheet" href="LoginStyle.css" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AddPost</title>
-	<link rel="stylesheet" href="HeaderStyle.css">
-	<link rel="stylesheet" href="LoginStyle.css">
-</head>
+    <script type="text/javascript" src="Drop.js"></script>
+  </head>
 
-<body>
-	<div id="Header">
-		<div Class="HomeRefs">
-			<a href="Index.html">Home</a>
-		</div>
-		<div Class="UserLogo"></div>
-	</div>
-	<div class="container">
-		<form>
-			<div class="login-card">
-				<h1>Welcome to PostIt</h1>
-				<a href="">Create an account</a>
-				<span>or<br>
-					Please log in</span>
-				<input type="email" id="email" name="email" placeholder="Email" required>
-				<input type="password" id="password" name="password" placeholder="Password" required>
-				<input type="submit" name="login" class="log-in-btn" value="Log in">
-				<a href="">Forget password</a>
-			</div>
-		</form>
-	</div>
-</body>
+  <body>
+    <div id="Header">
+      <div class="HomeRefs">
+        <a href="Index.html">Home</a>
+      </div>
 
+      <div class="UserBlock">
+        <!-- <div Class="UserLogo"></div> -->
+      </div>
+    </div>
+
+    <div class="container">
+      <form>
+        <div class="login-card">
+          <h1>Welcome to PostIt</h1>
+          <a href="">Create an account</a>
+          <span
+            >or<br />
+            Please log in</span
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input type="submit" name="login" class="log-in-btn" value="Log in" />
+          <a href="">Forget password</a>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

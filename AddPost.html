@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AddPost</title>
-	<link rel="stylesheet" href="HeaderStyle.css">
-	<link rel="stylesheet" href="AddPostStyle.css">
-</head>
-<body>
-	<div id="Header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AddPost</title>
+    <link rel="stylesheet" href="HeaderStyle.css" />
+    <link rel="stylesheet" href="AddPostStyle.css" />
+  </head>
+
+  <script type="text/javascript" src="Drop.js"></script>
+
+  <body>
+    <!-- <div id="Header">
 			<div Class="HomeRefs">
 				<a href="Index.html">Home</a>
 			</div>
-		<div Class="UserLogo"></div>
-	</div>
-	<div class="container">
-		<form>
-			<div class="add-post-card">
-				<label>Post body</label>
-				<textarea></textarea>
-				<label>Select file</label>
-				<input type="file">
-				<div class="btn-wrapper">
-					<input type="submit" name="create-post" class="create-post-btn" value="Add post">
-				</div>
+		<div Class="UserLogo" onclick="Drop_info()"></div>
 
-			</div>
-		</form>
-	</div>
-</body>
+		<div id="InfoUser">
+			<div class="InnerInfo" id="InnerInfoName">Jong Dou</div>
+			<div class="InnerInfo" id="InnerInfoMail">Jong Dou.ut</div>
+			<div class="InnerInfo" id="InnerInfoLogout">logout</div>
+		</div>
+	</div> -->
+
+    <div id="Header">
+      <div class="HomeRefs">
+        <a href="Login.html">Home|</a>
+      </div>
+
+      <div class="UserBlock">
+        <div class="UserLogo" onclick="Drop_info()"></div>
+
+        <div id="InfoUser">
+          <div class="InnerInfo" id="InnerInfoName">Jong Dou</div>
+          <div class="InnerInfo" id="InnerInfoMail">Jong Dou.ut</div>
+          <div class="InnerInfo" id="InnerInfoLogout">
+            <a href="Login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <form>
+        <div class="add-post-card">
+          <label>Post body</label>
+          <textarea></textarea>
+          <label>Select file</label>
+          <input type="file" />
+          <div class="btn-wrapper">
+            <input
+              type="submit"
+              name="create-post"
+              class="create-post-btn"
+              value="Add post"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

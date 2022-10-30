@@ -7,6 +7,8 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="HeaderStyle.css">
 	<link rel="stylesheet" href="IndexStyle.css">
+
+	<script type="text/javascript" src="Drop.js"></script>
 </head>
 
 <body>
@@ -17,7 +19,16 @@
 		<div Class="AddRefs">
 			<a href="AddPost.html">addPost</a>
 		</div>
-		<div Class="UserLogo"></div>
+		<div class="UserBlock">
+			<div Class="UserLogo" onclick="Drop_info()"></div>
+
+			<div id="InfoUser">
+				<div class="InnerInfo" id="InnerInfoName">Jong Dou</div>
+				<div class="InnerInfo" id="InnerInfoMail">Jong Dou.ut</div>
+				<div class="InnerInfo" id="InnerInfoLogout"><a href="Login.html">Logout</div>
+			</div>
+		</div>
+		
 	</div>
 
 	<div class="Posts">
