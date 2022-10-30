@@ -1,0 +1,65 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "createTime": "2022-10-30T14:21:08.799Z",
+      "author": "Ivan",
+      "text": "Hello world!"
+    },
+    {
+      "id": 2,
+      "createTime": "2022-10-30T14:21:31.059Z",
+      "author": "Viacheslav",
+      "text": "Hello my fellow Ukrainians."
+    },
+    {
+      "id": 3,
+      "createTime": "2022-10-30T14:22:14.839Z",
+      "author": "Eldar",
+      "text": "Hello my fellow Azerbaijanians."
+    },
+    {
+      "id": 4,
+      "createTime": "2022-10-30T14:22:51.364Z",
+      "author": "John",
+      "text": "I am very happy to study at University of Tartu!"
+    },
+    {
+      "id": 5,
+      "createTime": "2022-10-30T14:23:26.119Z",
+      "author": "realPivo",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png",
+      "text": "Very soon I'll be able to code this in Vue!!!"
+    },
+    {
+      "id": 6,
+      "createTime": "2022-10-30T14:24:20.498Z",
+      "author": "realPivo",
+      "text": "That's too many posts here..."
+    },
+    {
+      "id": 7,
+      "createTime": "2022-10-30T14:24:20.498Z",
+      "author": "realPivo",
+      "text": "Actually, these posts are written by the same person. But shhhh..."
+    },
+    {
+      "id": 8,
+      "createTime": "2022-10-30T14:25:38.407Z",
+      "author": "realPivo",
+      "text": "Just keep scrolling..."
+    },
+    {
+      "id": 9,
+      "createTime": "2022-10-30T14:25:54.851Z",
+      "author": "realPivo",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida auctor erat, eget aliquet nulla ultricies in. Nullam at aliquet ligula, id blandit tortor. Etiam tincidunt at sem sit amet molestie. Fusce fermentum varius purus. Proin nec ullamcorper turpis, sed viverra lorem. Curabitur vel sollicitudin metus. Aenean in eleifend odio. Donec commodo tristique nulla eget tincidunt. Nulla consequat nisl lacus, eu sollicitudin massa finibus quis. Suspendisse auctor laoreet lacus in viverra."
+    },
+    {
+      "id": 10,
+      "createTime": "2022-10-30T14:24:20.498Z",
+      "author": "realPivo",
+      "text": "Finally! We reached the bottom!"
+    }
+  ]
+}
