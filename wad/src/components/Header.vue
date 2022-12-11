@@ -6,7 +6,11 @@
   <div id="Header">
     <div class="HomeRefs"><router-link to="/">Home</router-link>|</div>
     <div class="AddRefs">
-      <a href="AddPost.html">addPost</a>
+      <router-link to="/addpost">Add post</router-link>
+    </div>
+    |
+    <div class="AddRefs">
+      <router-link to="/contacts">Contacts</router-link>
     </div>
     <div class="UserBlock">
       <div class="UserLogo" @click="toggleUserInfo = !toggleUserInfo"></div>
@@ -15,9 +19,7 @@
           <div class="InnerInfo" id="InnerInfoName">Jong Dou</div>
           <div class="InnerInfo" id="InnerInfoMail">Jong Dou.ut</div>
           <div class="InnerInfo" id="InnerInfoLogout">
-            <router-link to="/about" @click="toggleUserInfo = false"
-              >Log out</router-link
-            >
+            <router-link to="/login" @click="logout">Log out</router-link>
             <!-- <a href="Login.html">Logout</a> -->
           </div>
         </div>
@@ -60,7 +62,7 @@ a {
 
 .AddRefs {
   margin-top: 25px;
-  width: 100px;
+  /* width: 100px; */
   height: 30px;
   display: inline-block;
   transition: 0.2s;
@@ -147,6 +149,26 @@ export default {
     return {
       toggleUserInfo: false,
     };
+  },
+  methods: {
+    logout() {
+      this.toggleUserInfo = false;
+      fetch('http://localhost:3000/auth/logout', {
+        credentials: 'include', //  Don't forget to specify this if you need cookies
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          console.log('jwt removed');
+          //console.log('jwt removed:' + auth.authenticated());
+          this.$router.push('/login');
+          //location.assign("/");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log('error logout');
+        });
+    },
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <button>Reset likes</button>
+  <button>Delete all</button>
 </template>
 
 <script>
