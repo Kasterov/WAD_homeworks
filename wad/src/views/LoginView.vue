@@ -1,14 +1,14 @@
 <template>
   <Test></Test>
   <div class="container">
-    <form @submit.prevent="signup">
+    <form @submit.prevent="">
       <div class="login-card">
         <h1>Welcome to PostIt</h1>
-        Create an account
+        <router-link to="/signup">Create an account</router-link>
         <span
           >or<br />
-          <router-link to="/login">Please log in</router-link>
-        </span>
+          Please log in</span
+        >
         <input
           type="email"
           id="email"
@@ -25,8 +25,13 @@
           required
           v-model="this.password"
         />
-        <div v-if="validatePassword" class="error">{{ validatePassword }}</div>
-        <input type="submit" name="login" class="log-in-btn" value="Sign up" />
+        <input
+          @click="login"
+          type="submit"
+          name="login"
+          class="log-in-btn"
+          value="Log in"
+        />
       </div>
     </form>
   </div>
@@ -91,21 +96,22 @@ span ~ input {
 
 <script>
 export default {
-  name: 'SignUpView',
+  name: 'LoginView',
   data() {
     return {
+      email: '',
       password: '',
       validatePassword: '',
     };
   },
   methods: {
-    signup() {
+    login() {
       let data = {
         email: this.email,
         password: this.password,
       };
       // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
-      fetch('http://localhost:3000/auth/signup', {
+      fetch('http://localhost:3000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -116,8 +122,8 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          this.$router.push('/');
-          //location.assign("/");
+          //this.$router.push("/");
+          location.assign('/');
         })
         .catch((e) => {
           console.log(e);

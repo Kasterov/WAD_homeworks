@@ -1,15 +1,15 @@
 <template>
   <div class="home">
-    <div class="PostArea" v-for="post of posts">
+    <div class="PostArea" v-for="post of posts" @click="directPost(post.id)">
       <div class="PostHead">
         <img class="PostAuthor" :src="require(`@/assets/Logo.jpg`)" />
-        <div class="PostAuthorName">{{ post.author }}</div>
+        <div class="PostAuthorName">{{ post.title }}</div>
         <div class="PostDate">
-          {{ new Date(post.createTime).toUTCString() }}
+          {{ new Date(post.date).toLocaleDateString('en-US') }}
         </div>
       </div>
       <div class="PostImg" v-if="post.img"><img :src="post.img" /></div>
-      <div class="PostTextArea">{{ post.text }}</div>
+      <div class="PostTextArea">{{ post.body }}</div>
       <img
         class="PostMark"
         :src="require(`@/assets/Like.png`)"
@@ -17,7 +17,7 @@
       />
       <span class="PostLikes">{{ post.likes }}</span>
     </div>
-    <resetButton @click="resetLikes"></resetButton>
+    <resetButton @click="deletePosts"></resetButton>
   </div>
 </template>
 
@@ -27,20 +27,26 @@ import resetButton from '@/components/resetButton.vue';
 export default {
   name: 'HomeView',
   components: { resetButton },
-  computed: {
-    posts() {
-      return this.$store.state.posts;
-    },
-  },
+  // computed: {
+  //   posts() {
+  //     return this.$store.state.posts;
+  //   },
+  // },
   data() {
     return {
-      imgLike: '@assets\Like.png',
-      img: 'https://www.alt-codes.net/images/copyright.png',
-      text: 'asgagasgsagagaga',
-      likes: 42,
+      // imgLike: '@assets\Like.png',
+      // img: 'https://www.alt-codes.net/images/copyright.png',
+      // text: 'asgagasgsagagaga',
+      // likes: 42,
+      posts: [],
     };
   },
-
+  mounted() {
+    fetch('http://localhost:3000/api/posts')
+      .then((response) => response.json())
+      .then((data) => (this.posts = data))
+      .catch((err) => console.log(err.message));
+  },
   methods: {
     gotLiked: function (id) {
       this.$store.commit('gotLiked', { id });
@@ -48,11 +54,31 @@ export default {
     resetLikes: function () {
       this.$store.commit('resetLikes');
     },
+    directPost: function (id) {
+      this.$router.push('/post/' + id);
+    },
+    deletePosts: function () {
+      fetch(`http://localhost:3000/api/posts/`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then((response) => {
+          console.log(response.data);
+          // We are using the router instance of this element to navigate to a different URL location
+          this.$router.go();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
   },
 };
 </script>
 
 <style>
+a {
+  text-decoration: none;
+}
 .PostArea {
   margin-top: 30px;
   max-width: 600px;
